@@ -12,7 +12,13 @@ def test_not_in(collection, item):
     
 def test_is_between(lower, num, higher):
     assert lower < num < higher, "{0} should be lower than {1} which should be lower than {2}".format(lower, num, higher)
-    
+
+def test_is_lower(num, higher):
+    assert num < higher, "{0} should be lower than {1}".format(num, higher)
+
+def test_is_higher(lower, num):
+    assert lower < num, "{0} should be higher than {1}".format(num, lower)
+
 test_are_equal(2, 2)
 
 test_not_equal(1, 2)
@@ -22,5 +28,9 @@ test_is_in([1,2,3,4,5], 5)
 test_not_in([1,2,3,4,5], 6)
 
 test_is_between(1, 2, 3)
+
+test_is_lower(1, 2)
+
+test_is_higher(1, 2)
 
 print("ALL TESTS PASSED!!!")
